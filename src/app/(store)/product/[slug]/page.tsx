@@ -1,5 +1,6 @@
 import { api } from "@/data/api";
 import { Product } from "@/data/types/product";
+import { Metadata } from "next";
 import Image from "next/image";
 
 interface ProductProps {
@@ -18,6 +19,18 @@ async function getProduct(slug: string): Promise<Product> {
   const product = await response.json();
 
   return product;
+}
+
+// Memoization: o NextJS guarda em memória a mesma chamada HTTP que é efetuada mais de uma vez pelo mesmo componente ou pela mesma página, havendo a necessidade de fazer a requisição somente uma vez. Ele vai deduplicar: não vai fazer a chamada duas vezes
+
+export async function generateMetadata({
+  params,
+}: ProductProps): Promise<Metadata> {
+  const product = await getProduct(params.slug);
+
+  return {
+    title: product.title,
+  };
 }
 
 export default async function ProductPage({ params }: ProductProps) {

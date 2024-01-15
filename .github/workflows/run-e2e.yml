@@ -36,6 +36,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - uses: actions/cache@v3
+        name: Setup Cypress cache
+        with:
+          path: ~/.cache
+          key: ${{ runner.os }}-cypress-installation-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-cypress-installation-
+
       - name: Cypress run
         uses: cypress-io/github-action@v6
         env:

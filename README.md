@@ -38,9 +38,9 @@
 
 ## Features
 
-### 1. Add product to cart
+### 1. Add a product to cart
 
-When you are on the product page, there's a button to add the current product to cart.
+When you are on the product page, there's a button to add the current product to the cart.
 
 ### 2. Search for a product
 

@@ -1,5 +1,5 @@
 <div align="center" style="width: 64px; height: 64px; display: flex; align-items: center; gap: 6px; margin: 0 auto;">
-  <img src="/public/next-js-logo.png"  style="width: 64px; height: auto;" />
+  <img src="/public/next-js-logo.svg"  style="width: 64px; height: auto;" />
 </div>
 
 <h1 align = "center">Devstore</h1>
